@@ -1,2 +1,5 @@
 # BCR configuration file for publish-to-bcr
-# This file is intentionally empty - using default configuration
+# Publish both the main brotli module and the Go bindings module
+moduleRoots:
+  - "."
+  - "go"

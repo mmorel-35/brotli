@@ -9,9 +9,8 @@ on:
         required: true
         type: string
       registry_fork:
-        description: Registry fork to push to (should be your fork of bazel-central-registry)
+        description: Registry fork to push to (e.g., username/bazel-central-registry)
         required: true
-        default: mmorel-35/bazel-central-registry
         type: string
 
 jobs:
