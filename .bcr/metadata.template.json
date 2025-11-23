@@ -1,0 +1,13 @@
+{
+  "homepage": "https://github.com/google/brotli",
+  "maintainers": [
+    {
+      "name": "Maxime Morel",
+      "email": "maxime.morel@gmail.com",
+      "github": "mmorel-35"
+    }
+  ],
+  "repository": ["github:mmorel-35/brotli"],
+  "versions": [],
+  "yanked_versions": {}
+}

@@ -1,0 +1,15 @@
+bcr_test_module:
+  module_path: "."
+  matrix:
+    platform: ["debian11", "macos", "ubuntu2204", "windows"]
+    bazel: [6.x, 7.x, 8.x]
+  tasks:
+    build_and_test:
+      name: "Build brotli"
+      platform: ${{ platform }}
+      bazel: ${{ bazel }}
+      build_targets:
+        - "//:brotli"
+        - "//:brotlicommon"
+        - "//:brotlidec"
+        - "//:brotlienc"
