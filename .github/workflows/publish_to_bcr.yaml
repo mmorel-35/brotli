@@ -9,19 +9,14 @@ on:
         required: true
         type: string
 
-permissions:
-  contents: read
-
 jobs:
   publish:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ inputs.tag_name }}
-
-      - name: Publish to BCR
-        uses: bazel-contrib/publish-to-bcr@v2
-        with:
-          tag_name: ${{ inputs.tag_name }}
+    uses: bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@v2
+    with:
+      tag_name: ${{ inputs.tag_name }}
+      # Set to false since not using the release_ruleset workflow
+      attest: false
+    permissions:
+      contents: write
+    secrets:
+      publish_token: ${{ secrets.BCR_PUBLISH_TOKEN }}
